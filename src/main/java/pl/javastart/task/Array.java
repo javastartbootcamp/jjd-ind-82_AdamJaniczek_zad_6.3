@@ -32,7 +32,7 @@ public class Array {
             }
             System.out.println();
             for (int j = 0; j < array[i].length; j++) {
-                System.out.printf("%s", "_______");
+                System.out.print("_".repeat(7));
             }
             System.out.println();
         }
