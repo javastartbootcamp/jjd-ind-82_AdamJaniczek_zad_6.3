@@ -1,26 +1,38 @@
 package pl.javastart.task;
 
+import java.util.Scanner;
+
 public class Array {
 
-    int[][] createArray(int row, int column) {
+    int[][] createArray() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Podaj liczbę wierszy");
+        int row = scanner.nextInt();
+        System.out.println("Podaj liczbę kolumn");
+        int column = scanner.nextInt();
         if ((row & column) <= 100) {
             return new int[row][column];
-        } else {
-            System.out.println("Maksymalny rozmiar tablicy to 100 x 100");
         }
-        return new int[0][0];
+        return null;
     }
 
     void fillArray(int[][] array) {
-        int[][] result = array;
         for (int row = 0; row < array.length; row++) {
             for (int column = 0; column < array[row].length; column++) {
-                result[row][column] = row * column;
+                array[row][column] = row * column;
             }
         }
-        for (int row = 0; row < array.length; row++) {
-            for (int column = 0; column < array[row].length; column++) {
-                System.out.printf("%5d |", result[row][column]);
+    }
+
+    public void printArray(int[][] array) {
+
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.printf("%5d |", array[i][j]);
+            }
+            System.out.println();
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.printf("%s", "_______");
             }
             System.out.println();
         }
