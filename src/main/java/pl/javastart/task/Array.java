@@ -25,16 +25,12 @@ public class Array {
     }
 
     public void printArray(int[][] array) {
-
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                System.out.printf("%5d |", array[i][j]);
+        for (int[] row : array) {
+            for (int cell : row) {
+                System.out.printf("%5d |", cell);
             }
             System.out.println();
-            for (int j = 0; j < array[i].length; j++) {
-                System.out.print("_".repeat(7));
-            }
-            System.out.println();
+            System.out.print("_".repeat(7).repeat(row.length));
         }
     }
 }
